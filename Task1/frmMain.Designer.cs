@@ -59,6 +59,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "MainForm";
             this.Text = "Окно демонстрации";
+       
             this.ResumeLayout(false);
 
         }

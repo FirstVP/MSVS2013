@@ -12,14 +12,11 @@ namespace Task1
     {
         Point EndPoint;
        
-
         public Line (int firstCentralCoordinate, int secondCentralCoordinate, int firstEndCoordinate, int secondEndCoordinate): base (firstCentralCoordinate, secondCentralCoordinate)
         {
             this.EndPoint.X = firstEndCoordinate;
             this.EndPoint.Y = secondEndCoordinate;
         }
-
-        
 
         public override void Draw(Panel drawPanel)
         {

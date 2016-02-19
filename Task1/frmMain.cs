@@ -34,7 +34,10 @@ namespace Task1
         private void btnDraw_Click(object sender, EventArgs e)
         {
             ShapeList mainList = new ShapeList(panel1);
+            btnDraw.Enabled = false;
         }
+
+      
 
       
 
