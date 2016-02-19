@@ -20,9 +20,24 @@ namespace Task1
         {
             InitializeComponent();
 
-            List<Shape> parts = new List<Shape>();
+           
+
+          //  Line line = new Line(10, 10, 10, 10);
+          //  line.Draw(panel1);
+
+            
+
+
 
         }
+
+        private void btnDraw_Click(object sender, EventArgs e)
+        {
+            ShapeList mainList = new ShapeList(panel1);
+        }
+
+      
+
 
 
 
