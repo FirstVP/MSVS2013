@@ -28,7 +28,8 @@ namespace Task1
 
         private void DrawShapes()
         {
-            ShapeList mainList = new ShapeList(pnlMain);
+            ShapeList mainList = new ShapeList();
+            mainList.DrawList(pnlMain);
         }
 
       

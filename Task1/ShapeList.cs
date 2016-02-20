@@ -9,10 +9,10 @@ namespace Task1
 {
     class ShapeList
     {
-        private List<Shape> exampleList;
-        public ShapeList(Panel drawPanel)
+        private List<Shape> currentList;
+        public ShapeList()
         {
-            exampleList = new List<Shape>();
+            currentList = new List<Shape>();
             Line line = new Line(15, 0, 15, 100, 0x78FF0000);
             Square square = new Square(550, 110, 100, 0x71FFAA55); 
             Circle circle = new Circle(250, 100, 100, 0x780000FF);
@@ -20,18 +20,21 @@ namespace Task1
             Rectangle rectangle = new Rectangle(70, 300, 100, 50, 0x78AAAAC0);
             Ellipse ellipse = new Ellipse(250, 300, 100, 50, 0x78FF0FB0);
 
-            exampleList.Add(line);
-            exampleList.Add(square);
-            exampleList.Add(circle);
-            exampleList.Add(triangle);
-            exampleList.Add(rectangle);
-            exampleList.Add(ellipse);
+            currentList.Add(line);
+            currentList.Add(square);
+            currentList.Add(circle);
+            currentList.Add(triangle);
+            currentList.Add(rectangle);
+            currentList.Add(ellipse);
 
-            foreach (Shape currentShape in exampleList)
+        }
+
+        public void DrawList(Panel drawPanel)
+        {
+            foreach (Shape currentShape in currentList)
             {
                 currentShape.Draw(drawPanel);
             }
-
         }
     }
 }
