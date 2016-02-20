@@ -9,9 +9,10 @@ namespace Task1
 {
     class ShapeList
     {
+        private List<Shape> exampleList;
         public ShapeList(Panel drawPanel)
         {
-            List<Shape> exampleList = new List<Shape>();
+            exampleList = new List<Shape>();
             Line line = new Line(15, 0, 15, 100, 0x78FF0000);
             Square square = new Square(550, 110, 100, 0x71FFAA55); 
             Circle circle = new Circle(250, 100, 100, 0x780000FF);
