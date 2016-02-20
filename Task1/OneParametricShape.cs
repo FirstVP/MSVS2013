@@ -12,8 +12,8 @@ namespace Task1
     {
         protected int MainParameter;
 
-        protected OneParametricShape(int firstCentralCoordinate, int secondCentralCoordinate, int mainParameter)
-            : base(firstCentralCoordinate, secondCentralCoordinate)
+        protected OneParametricShape(int firstCentralCoordinate, int secondCentralCoordinate, int mainParameter, int colour)
+            : base(firstCentralCoordinate, secondCentralCoordinate, colour)
         {
             this.MainParameter = mainParameter;
         }
@@ -24,15 +24,15 @@ namespace Task1
 
     class Square: OneParametricShape
     {
-         public Square(int firstCentralCoordinate, int secondCentralCoordinate, int mainParameter)
-            : base(firstCentralCoordinate, secondCentralCoordinate, mainParameter)
+        public Square(int firstCentralCoordinate, int secondCentralCoordinate, int mainParameter, int colour)
+            : base(firstCentralCoordinate, secondCentralCoordinate, mainParameter, colour)
         {
             
         }
         public override void Draw(Panel drawPanel)
         {
             Graphics mainGrapics = drawPanel.CreateGraphics();
-            mainGrapics.DrawRectangle(new Pen(Color.Red), CenterPoint.X - MainParameter / 2, CenterPoint.Y - MainParameter / 2, MainParameter, MainParameter);
+            mainGrapics.DrawRectangle(new Pen(Color.FromArgb(Colour)), CenterPoint.X - MainParameter / 2, CenterPoint.Y - MainParameter / 2, MainParameter, MainParameter);
         }
     }
 
@@ -40,32 +40,45 @@ namespace Task1
 
     class Circle : OneParametricShape
     {
-        public Circle(int firstCentralCoordinate, int secondCentralCoordinate, int mainParameter)
-            : base(firstCentralCoordinate, secondCentralCoordinate, mainParameter)
+        public Circle(int firstCentralCoordinate, int secondCentralCoordinate, int mainParameter, int colour)
+            : base(firstCentralCoordinate, secondCentralCoordinate, mainParameter, colour)
         {
 
         }
         public override void Draw(Panel drawPanel)
         {
             Graphics mainGrapics = drawPanel.CreateGraphics();
-            mainGrapics.DrawEllipse(new Pen(Color.Red), CenterPoint.X - MainParameter, CenterPoint.Y - MainParameter, MainParameter * 2, MainParameter * 2);
+            mainGrapics.DrawEllipse(new Pen(Color.FromArgb(Colour)), CenterPoint.X - MainParameter, CenterPoint.Y - MainParameter, MainParameter * 2, MainParameter * 2);
         }
     }
 
     class EquilateralTriangle : OneParametricShape
     {
-        public EquilateralTriangle(int firstCentralCoordinate, int secondCentralCoordinate, int mainParameter)
-            : base(firstCentralCoordinate, secondCentralCoordinate, mainParameter)
+        public EquilateralTriangle(int firstCentralCoordinate, int secondCentralCoordinate, int mainParameter, int colour)
+            : base(firstCentralCoordinate, secondCentralCoordinate, mainParameter, colour)
         {
 
         }
+
         public override void Draw(Panel drawPanel)
         {
+            const int pointCount = 3;
+
             int halfMainParameter = MainParameter / 2;
+
+            Point[] points = new Point[pointCount];
+            points[0] = new Point(CenterPoint.X, CenterPoint.Y - halfMainParameter);
+            points[1] = new Point(CenterPoint.X - halfMainParameter, CenterPoint.Y + halfMainParameter);
+            points[2] = new Point(CenterPoint.X + halfMainParameter, CenterPoint.Y + halfMainParameter);
+
             Graphics mainGrapics = drawPanel.CreateGraphics();
-            mainGrapics.DrawLine(new Pen(Color.Red), CenterPoint.X, CenterPoint.Y - halfMainParameter, CenterPoint.X - halfMainParameter, CenterPoint.Y + halfMainParameter);
-            mainGrapics.DrawLine(new Pen(Color.Red), CenterPoint.X - halfMainParameter, CenterPoint.Y + halfMainParameter, CenterPoint.X + halfMainParameter, CenterPoint.Y + halfMainParameter);
-            mainGrapics.DrawLine(new Pen(Color.Red), CenterPoint.X + halfMainParameter, CenterPoint.Y + halfMainParameter, CenterPoint.X, CenterPoint.Y - halfMainParameter);
+
+            Pen currentPen = new Pen(Color.FromArgb(Colour));
+
+            mainGrapics.DrawLine(currentPen, points[0], points[1]);
+            mainGrapics.DrawLine(currentPen, points[1], points[2]);
+            mainGrapics.DrawLine(currentPen, points[2], points[0]);
+   
         }
     }
       

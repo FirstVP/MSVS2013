@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlMain = new System.Windows.Forms.Panel();
             this.btnDraw = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlMain
             // 
-            this.panel1.Location = new System.Drawing.Point(3, 76);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(694, 496);
-            this.panel1.TabIndex = 0;
+            this.pnlMain.Location = new System.Drawing.Point(3, 76);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(694, 496);
+            this.pnlMain.TabIndex = 0;
             // 
             // btnDraw
             // 
@@ -56,17 +56,16 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(697, 573);
             this.Controls.Add(this.btnDraw);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlMain);
             this.Name = "MainForm";
             this.Text = "Окно демонстрации";
-       
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Button btnDraw;
 
     }

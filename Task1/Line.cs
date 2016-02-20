@@ -12,7 +12,7 @@ namespace Task1
     {
         Point EndPoint;
        
-        public Line (int firstCentralCoordinate, int secondCentralCoordinate, int firstEndCoordinate, int secondEndCoordinate): base (firstCentralCoordinate, secondCentralCoordinate)
+        public Line (int firstCentralCoordinate, int secondCentralCoordinate, int firstEndCoordinate, int secondEndCoordinate, int color): base (firstCentralCoordinate, secondCentralCoordinate, color)
         {
             this.EndPoint.X = firstEndCoordinate;
             this.EndPoint.Y = secondEndCoordinate;
@@ -21,7 +21,7 @@ namespace Task1
         public override void Draw(Panel drawPanel)
         {
             Graphics mainGrapics = drawPanel.CreateGraphics();
-            mainGrapics.DrawLine(new Pen(Color.Red), CenterPoint.X, CenterPoint.Y, EndPoint.X, EndPoint.Y);
+            mainGrapics.DrawLine(new Pen(Color.FromArgb(Colour)), CenterPoint.X, CenterPoint.Y, EndPoint.X, EndPoint.Y);
         }
 
     }

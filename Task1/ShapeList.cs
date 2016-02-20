@@ -12,15 +12,19 @@ namespace Task1
         public ShapeList(Panel drawPanel)
         {
             List<Shape> exampleList = new List<Shape>();
-            Line line = new Line(15, 0, 15, 100);
-            Square square = new Square(250, 100, 100);
-            Circle circle = new Circle(250, 100, 100);
-            EquilateralTriangle triangle = new EquilateralTriangle(250, 100, 100);
+            Line line = new Line(15, 0, 15, 100, 0x78FF0000);
+            Square square = new Square(550, 110, 100, 0x71FFAA55); 
+            Circle circle = new Circle(250, 100, 100, 0x780000FF);
+            EquilateralTriangle triangle = new EquilateralTriangle(350, 200, 100, 0x780FF0FF);
+            Rectangle rectangle = new Rectangle(70, 300, 100, 50, 0x78AAAAC0);
+            Ellipse ellipse = new Ellipse(250, 300, 100, 50, 0x78FF0FB0);
 
             exampleList.Add(line);
             exampleList.Add(square);
             exampleList.Add(circle);
             exampleList.Add(triangle);
+            exampleList.Add(rectangle);
+            exampleList.Add(ellipse);
 
             foreach (Shape currentShape in exampleList)
             {

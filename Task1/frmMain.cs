@@ -19,22 +19,16 @@ namespace Task1
         public MainForm()
         {
             InitializeComponent();
-
-           
-
-          //  Line line = new Line(10, 10, 10, 10);
-          //  line.Draw(panel1);
-
-            
-
-
-
         }
 
         private void btnDraw_Click(object sender, EventArgs e)
         {
-            ShapeList mainList = new ShapeList(panel1);
-            btnDraw.Enabled = false;
+            DrawShapes();
+        }
+
+        private void DrawShapes()
+        {
+            ShapeList mainList = new ShapeList(pnlMain);
         }
 
       
